@@ -15,18 +15,20 @@ extension Bool {
 }
 
 struct ContentView: View {
-    
-    @State private var usedRedText = false
+    @State var bindVar = ""
+    let motto1 = Text("Draco dormiens")
+    let motto2 = Text("nunquam titillandus")
+    var tf: some View { TextField("place", text: $bindVar)
+    }
     
     var body: some View {
         VStack {
-            Text("Gryffindor")
-                .blur(radius: 5)
-            Text("Hufflepuff")
-            Text("Ravenclaw")
-            Text("Slytherin")
+            motto1
+                .foregroundColor(.red)
+            motto2
+                .foregroundColor(.blue)
+            tf
         }
-        .blur(radius: 0)
     }
 }
 
