@@ -7,27 +7,27 @@
 
 import SwiftUI
 
-extension Bool {
+struct CapsuleText: View {
+    var text: String
     
-    mutating func toggle() {
-        self = !self
+    var body: some View {
+        Text(text)
+            .font(.largeTitle)
+            .padding()
+            .background(Color.blue)
+            .clipShape(Capsule())
     }
 }
 
 struct ContentView: View {
-    @State var bindVar = ""
-    let motto1 = Text("Draco dormiens")
-    let motto2 = Text("nunquam titillandus")
-    var tf: some View { TextField("place", text: $bindVar)
-    }
     
     var body: some View {
-        VStack {
-            motto1
-                .foregroundColor(.red)
-            motto2
-                .foregroundColor(.blue)
-            tf
+        VStack(spacing: 10) {
+            CapsuleText(text: "First")
+                .foregroundColor(.white)
+            CapsuleText(text: "Second")
+                .foregroundColor(.yellow)
+            
         }
     }
 }
