@@ -15,15 +15,19 @@ extension Bool {
 }
 
 struct ContentView: View {
+    
     @State private var usedRedText = false
     
     var body: some View {
-        Button("Hello World") {
-            self.usedRedText.toggle()
+        VStack {
+            Text("Gryffindor")
+                .blur(radius: 5)
+            Text("Hufflepuff")
+            Text("Ravenclaw")
+            Text("Slytherin")
         }
-        .foregroundColor(usedRedText ? .red : .blue)
+        .blur(radius: 0)
     }
-    
 }
 
 struct ContentView_Previews: PreviewProvider {
